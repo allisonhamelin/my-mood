@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
-import axios from 'axios';
+// import axios from 'axios';
+import firebase from './firebase';
 import './App.css';
 
 class App extends Component {
@@ -7,19 +8,18 @@ class App extends Component {
         super(props);
 
         this.state = {
-            loading: true,
             mood: "",
         }
     }
 
     componentDidMount() {
-        axios.get('https://my-mood-7ee9d.firebaseio.com/mood.json')
-            .then(res => {
-                this.setState({
-                    loading: false,
-                    mood: res.data.mood,
-                })
+        var starCountRef = firebase.ref('/mood');
+        starCountRef.on('value', (snapshot) => {
+            const data = snapshot.val();
+            this.setState({
+                mood: data.mood,
             })
+        });
     }
 
     render() {
