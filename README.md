@@ -1,4 +1,4 @@
-A website that allows the user to display their mood as set by a Google Home app. It aims to allow those struggling with mental health to more comfortably reach out to their loved ones and let them know how they're feeling.
+A website that allows the user to display their mood as set through Google Home. It aims to allow those struggling with mental health to more comfortably reach out to their loved ones and let them know how they're feeling.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
